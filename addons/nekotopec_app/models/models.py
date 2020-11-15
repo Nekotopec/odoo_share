@@ -1,16 +1,22 @@
 # -*- coding: utf-8 -*-
 
-import uuid
 from odoo import models, fields, api
+from odoo.http import request, HttpRequest
+
+request: HttpRequest = request
 
 
 class File(models.Model):
     _name = 'nekotopec_app.file'
     _description = 'Model of file.'
 
+    filename = fields.Char()
     file = fields.Binary()
-    link = fields.Char(compute="_make_link")
+    link = fields.Char()
+    host_link = fields.Char(compute='_compute_host_link', store=True)
 
-    def _make_link(self):
+    @api.depends('link')
+    def _compute_host_link(self):
         for record in self:
-            record.link = str(uuid.uuid4())
+            record.host_link = (f'{request.httprequest.host_url}'
+                                f'nekotopec_share/file/download/{record.link}')
