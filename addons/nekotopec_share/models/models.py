@@ -7,7 +7,7 @@ request: HttpRequest = request
 
 
 class File(models.Model):
-    _name = 'nekotopec_app.file'
+    _name = 'nekotopec_share.file'
     _description = 'Model of file.'
 
     filename = fields.Char()

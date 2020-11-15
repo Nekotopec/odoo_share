@@ -7,8 +7,8 @@
     </record>
 
     <record model="ir.ui.view" id="file_list_view">
-        <field name="name">nekotopec_app.list.view</field>
-        <field name="model">nekotopec_app.file</field>
+        <field name="name">nekotopec_share.list.view</field>
+        <field name="model">nekotopec_share.file</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="filename"/>
@@ -19,14 +19,14 @@
 
     <record model="ir.actions.act_window" id="action_view_files">
         <field name="name">Uploaded files</field>
-        <field name="res_model">nekotopec_app.file</field>
+        <field name="res_model">nekotopec_share.file</field>
         <field name="view_mode">tree</field>
     </record>
 
-    <menuitem name="OdooShare_nekotopec" id="nekotopec_app.menu_root"
+    <menuitem name="OdooShare_nekotopec" id="nekotopec_share.menu_root"
               action="action_upload_form_url"/>
 
-    <menuitem name="OdooShare_nekotopec_view_files" id="nekotopec_app.menu_root_2"
+    <menuitem name="OdooShare_nekotopec_view_files" id="nekotopec_share.menu_root_2"
               action="action_view_files"/>
 
 </odoo>

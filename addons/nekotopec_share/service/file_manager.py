@@ -53,4 +53,4 @@ def format_link(db_link: str) -> str:
 
 def _get_file_model() -> odoo.models.Model:
     """Returns model."""
-    return request.env['nekotopec_app.file']
+    return request.env['nekotopec_share.file']

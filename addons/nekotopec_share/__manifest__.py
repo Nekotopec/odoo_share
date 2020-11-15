@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nekotopec_app",
+    'name': "nekotopec_share",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as

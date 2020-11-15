@@ -4,7 +4,7 @@ import logging
 
 import werkzeug
 from odoo import http
-from odoo.addons.nekotopec_app.service import file_manager
+from odoo.addons.nekotopec_share.service import file_manager
 from odoo.addons.web.controllers.main import content_disposition
 from odoo.http import request, Response
 
@@ -32,7 +32,7 @@ class FileController(http.Controller):
     @http.route('/nekotopec_share/upload_form', auth='user')
     @admin_rights_required
     def upload_form(self, **kwargs):
-        return Response(template='nekotopec_app.upload_file')
+        return Response(template='nekotopec_share.upload_file')
 
     @http.route('/nekotopec_share/file/upload', auth='user')
     @admin_rights_required
@@ -44,7 +44,7 @@ class FileController(http.Controller):
             return werkzeug.exceptions.BadRequest()
 
         link = file_manager.set_file(file_item)
-        return request.render('nekotopec_app.show_link', {'link': link})
+        return request.render('nekotopec_share.show_link', {'link': link})
 
     @http.route('/nekotopec_share/file/download/<file_id>', auth='public')
     def download_file(self, file_id, **kwargs):
