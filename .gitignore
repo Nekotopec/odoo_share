@@ -4,6 +4,7 @@
 
 # My set
 test.html
+data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
